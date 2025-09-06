@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #566081;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-family: "Pixelify Sans", sans-serif;
+  color: #FFFFFF;
+}
+
+button {
+  position: absolute;
+  height: 4em;
+  width: 6em;
+  margin-top: 3em;
+  margin-left: -6em;
+  cursor: pointer;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  background-color: #566081;
+  color: white;
+  transition: border-color 0.25s;
+}
+
+
+button:hover {
+  opacity: 80%;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(154, 130, 161, 0.5);
+}
+
+li {
+  list-style-type: none;
+}
+
+.text-input {
+  height: 4.5em;
+  width: 30em;
+  margin-top: 50px;
+  margin-left: 0.1em;
+  padding-left: 2em;
+  outline: none;
+  border: 0;
+  border-radius: 30px;
+  background-color: #D9D9D9;
+  color: #797979;
+  font-weight: bolder;
+}
+
+.todo-section {
+  position: relative;
+  justify-self: center;
+  width: 550px;
+  padding: 1px 3px 70px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+}
+
+.list {
+  background-color: #FFFFFF;
+  color: #3f3e3e;
+}
