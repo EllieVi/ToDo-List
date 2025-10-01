@@ -3,15 +3,18 @@ import "../App.css";
 import { DeleteIcon } from "../assets/icons/DeleteIcon";
 import { EditIcon } from "../assets/icons/EditIcon";
 
-const List = ({ id, onCheck, tasks, onEdit, onDelete  }) => {
+const List = ({ id, onCheck, task, onEdit, onDelete }) => {
   return (
     <div className="list" key={id}>
-      <input type="checkbox" onClick={() => onCheck(id)} />
-      <div style={{ textDecoration: tasks.isCompleted ? "line-through" : "" }}>
-        <li>{tasks}</li>
+      <input
+        type="checkbox"
+        onClick={() => onCheck(task.id)}
+      />
+      <div style={{textDecoration: `${task.completed ? 'line-through' : ''}`}}>
+        <li>{task.content}</li>
       </div>
       <p className="action-buttons tooltip">
-        <button className="edit" onClick={onEdit}>
+        <button className="edit" onClick={() => onEdit(task.id)}>
           <EditIcon />
           <span>Edit</span>
         </button>
@@ -27,9 +30,9 @@ const List = ({ id, onCheck, tasks, onEdit, onDelete  }) => {
 List.propTypes = {
   id: PropTypes.node,
   onCheck: PropTypes.func,
-  tasks: PropTypes.array,
+  task: PropTypes.array,
   onEdit: PropTypes.func,
-  onDelete: PropTypes.func
+  onDelete: PropTypes.func,
 };
 
 export default List;
