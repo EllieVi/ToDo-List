@@ -1,6 +1,6 @@
 import "../App.css";
 import EditTaskForm from "./EditTaskForm";
-import List from "./list";
+import List from "./List";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -35,7 +35,7 @@ const Card = () => {
     localStorage.setItem('tasks', JSON.stringify(newTasks));
   };
 
-  const handleEditTask = (id) => {
+  const editTaskState = (id) => {
     setTasks(
       tasks?.map((task) =>
         task.id === id ? { ...task, isEditing: !task.isEditing } : task
@@ -43,7 +43,7 @@ const Card = () => {
     );
   };
 
-  const editTask = (newTask, id) => {
+  const handleEditTask = (newTask, id) => {
     const newTasks = tasks?.map((task) =>
       task.id === id
         ? { ...task, content: newTask, isEditing: !task.isEditing }
@@ -83,12 +83,12 @@ const Card = () => {
             <>
               {tasks?.map((task, index) => {
                 return task.isEditing ? (
-                  <EditTaskForm edit={editTask} task={task} />
+                  <EditTaskForm edit={handleEditTask} task={task} />
                 ) : (
                   <List
                     id={index}
                     onCheck={handleCompleteCheck}
-                    onEdit={handleEditTask}
+                    onEdit={editTaskState}
                     task={task}
                     onDelete={() => handleRemoveTask(task?.id)}
                   />
